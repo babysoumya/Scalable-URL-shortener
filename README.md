@@ -16,19 +16,7 @@ A scalable, distributed URL shortening service built with AWS Lambda, API Gatewa
 ---
 
 ## Folder Structure
-shortener-api/
-├── template.yaml # AWS SAM template for resources
-├── functions/
-│ ├── shorten.js # Lambda to shorten URLs
-│ ├── redirect.js # Lambda to redirect short URLs
-│ ├── package.json # Node.js dependencies
-│ └── node_modules/ # Installed dependencies
-├── utils/
-│ ├── base62.js # Base62 encoding helper
-│ └── consistentHash.js # Consistent hashing helper
-├── event-shorten.json # Sample event for shorten function local invoke
-├── event-redirect.json # Sample event for redirect function local invoke
-└── README.md # This file
+<pre> shortener-api/ ├── template.yaml # AWS SAM template for resources ├── functions/ │ ├── shorten.js # Lambda to shorten URLs │ ├── redirect.js # Lambda to redirect short URLs │ ├── package.json # Node.js dependencies │ └── node_modules/ # Installed dependencies ├── utils/ │ ├── base62.js # Base62 encoding helper │ └── consistentHash.js # Consistent hashing helper ├── event-shorten.json # Sample event for shorten function (local testing) ├── event-redirect.json # Sample event for redirect function (local testing) └── README.md # Project documentation </pre>
 
 ## Setup & Deployment
 
@@ -69,8 +57,9 @@ With JSON body:
 }
 
 Response:
+
 {
-  "shortUrl": "https://<api-gateway-url-or-custom-domain>/<shortCode>"
+  "shortUrl": "https://`<api-gateway-url-or-custom-domain>`/`<shortCode>`"
 }
 
 # Redirect a Short URL
